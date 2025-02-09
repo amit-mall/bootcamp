@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Basic</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+    <!-- Simple Interest-->
+     <h1>Excercise 1</h1>
+    <div class="box">
+        <button onclick="simpleInterest()">Calculate SI</button>&nbsp;<span id="si"></span>
+    </div>
+    <h1>Excercise 2</h1>
+    <!-- Palindrome-->
+    <div class="box">
+        <input type="text" placeholder="Enter the string" id="palindrome" />
+        <button onclick="checkPalindrome()">Check if palindrome</button>
+        <p id="palindromeResult"></p>
+    </div>
+
+    <h1>Excercise 3</h1>
+    <!-- Area of Circle-->
+    <div class="box">
+        <input type="text" placeholder="Enter the Radius" id="circle" />
+        <button onclick="calculateCircleArea()">Calculate Area of Circle</button>
+        <p id="ariaResult"></p>
+    </div>
+
+    <h1>Excercise 4</h1>
+    <!-- Object Copy-->
+    <div class="box">
+        <div class="editor">
+<pre>
+<code id="obj" contenteditable="true">
+{
+    "name": "amit",
+    "empId": 2351,
+    "address" :{
+        "city" : "Noida",
+        "State": "UP"
+    }
+}
+</code>
+</pre>
+        </div>
+        <button onclick="copyObject()">Copy and console</button>
+    </div>
+
+<h1>Excercise 5</h1>
+    <!-- employee-->
+    <div class="box">
+        <div class="editor">
+<pre><code id="emp" contenteditable="true">[
+ {
+  "name": "Jon",
+  "salary": 5500,
+  "dob": "10-02-2010"
+ },
+ {
+  "name": "Kevin",
+  "salary": 4200,
+  "dob": "20-01-2008"
+ },
+ {
+  "name": "Travis",
+  "salary": 6000,
+  "dob": "25-05-2001"
+ },
+ {
+  "name": "Harish",
+  "salary": 10000,
+  "dob": "03-04-1980"
+ },
+ {
+  "name": "Karim",
+  "salary": 15000,
+  "dob": "03-04-1970"
+ },
+ {
+  "name": "Siva",
+  "salary": 3500,
+  "dob": "03-04-2005"
+ },
+ {
+  "name": "Margar",
+  "salary": 800,
+  "dob": "03-04-2000"
+ },
+ {
+  "name": "Flu",
+  "salary": 700,
+  "dob": "03-04-2002"
+ }
+]</code></pre>
+        </div>
+        <ol>
+            <li>
+                All employees with salary greater than <input id="salaryConst" type="text" value="5000" size="10" /> <button onclick="salaryFilter()">Get It</button><br />
+                <span id="salaryR1"></span>
+            </li>
+            <li>
+                Employees Group based on Age: <button onclick="groupEmp()">Group</button>
+                <table>
+                    <tr>
+                        <td>Under 20:</td>
+                        <td id="under20"></td>
+                    </tr>
+                    <tr>
+                        <td>Under 20 to 30:</td>
+                        <td id="under20_30"></td>
+                    </tr>
+                    <tr>
+                        <td>Above than 30: </td>
+                        <td id="above30"></td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                Increment Salary by <input type="text" value="5" id="hike" size="2" /> times if: salary less <input type="text" id="salLimit" value="1000" size="5" /> and age greater than <input id="ageLimit" type="text" value="20" size="2" /> 
+                <button onclick="incrementSalary()">Increment</button>
+            </li>
+        </ol>
+        
+    </div>
+<script type="text/javascript" src="./script.js"></script>
+</body>
+</html>
