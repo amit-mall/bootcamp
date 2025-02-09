@@ -1,7 +1,12 @@
 
 /** simple interest */
 function simpleInterestFn(pa,roi,time){
-    document.getElementById("si").innerHTML=`Simple Interest is: ${(pa*roi*time)/100}`;
+    if(pa*roi*time){
+        document.getElementById("si").innerHTML=`Simple Interest is: ${(pa*roi*time)/100}`;
+    }else{
+        alert("Please enter correct value")
+    }
+    
 }
 function simpleInterest(){
     const inputData = prompt("Enter the 'Principal Amount', 'Interest Rate' and 'No. of Years' (seperated by commas)");
@@ -71,7 +76,7 @@ function copyObjectFn(obj){
 }
 */
 
-// //shallow copy using spread
+// //shallow copy using assign
 /*
 function copyObjectFn(obj){
     return objCopy = Object.assign({},obj)
