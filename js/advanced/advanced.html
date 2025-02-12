@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Js</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+    <h2>Question 1</h2>
+    <div class="box">
+        <button onclick="readValueForCal()">Read Values</button> <span id="readValueForCal"></span>
+    </div>
+    <div class="box">
+        <button onclick="addValue()">Add Values</button> <span id="resultAdd"></span>
+    </div>
+    <div class="box">
+        <button onclick="subtractValue()">Subtract Values</button> <span id="resultSubtract"></span>
+    </div>
+    <div class="box">
+        <button onclick="multiplyValue()">Subtract Values</button> <span id="resultMultiply"></span>
+    </div>
+    <h2>Question 2</h2>
+    <div class="box">
+        <button onclick="readValueForTemp()">Read</button> <span id="readValueForTemp"></span>
+    </div>
+    <div class="box">
+        <button onclick="toFahrenheit()">Celsius to Fahrenheit</button> <span id="resultToFahrenheit"></span>
+    </div>
+    <div class="box">
+        <button onclick="toKelvin()">Fahrenheit to Kelvin</button> <span id="resultToKelvin"></span>
+    </div>
+    <div class="box">
+        <button onclick="displayValue()">Display Results  in the console</button> You can see the results in console as well
+    </div>
+    <h2>Question 3</h2>
+    <ol>
+        <li>
+<pre><code>
+var x = 5;
+function first() {
+    console.log(x); //5
+    var y = 10;
+
+    function second() {
+        console.log(y); // 10
+        console.log(z); // undefined
+        var z = 20;
+    }
+
+    second();
+}
+first();
+console.log(y); //ReferenceError: y is not defined
+</code></pre>
+    </li>
+        <li>When second() is invoked, JavaScript hoists the declaration of z but not its initialization,so its value is undefined at that place</li>
+        <li>In JS, scope chaining is a concept to resolve access of variable. When a function  tries to access a variable, JS first searches this into local scope, if not found then it looks for parent's scope. In case of console.log(y), into second(), there is no variable y, so it searches for parent's scope and finds that y = 10, so it will gives us console.log(y) = 10</li>
+        <li>When we console variable "y" out of the function first(), it will gives error: "ReferenceError: y is not defined". In JS variable scope is limited to function only, not outside of the function, That is why when we trying to access y outside function, it throwing error. <br/>
+            Inshort, since y is not defined in the global scope, instead it defined inside function first(), so will  throws a ReferenceError, when we call outside of function first().
+        </li>
+        <li>
+<pre><code>
+let x = 5;
+function first() {
+    console.log(x); //5
+    let y = 10;
+
+    function second() {
+        console.log(y); // 10
+        console.log(z); // ReferenceError: Cannot access 'z' before initialization
+        let z = 20;
+    }
+
+    second();
+}
+first();
+console.log(y);
+</code></pre>
+        In case of let, we must have to initialize the value before using this. But in second() function, we are consoling z, before initialization, so it will throw error "ReferenceError: Cannot access 'z' before initialization", and will break the further excution of code.
+        </li>
+    </ol>
+<script src="./script.js" type="text/javascript"></script>
+</body>
+</html>
