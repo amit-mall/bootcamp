@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOJS</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+    <h2>Question 1</h2>
+    <div class="box">
+        <pre>
+<code>
+    function Person(name) {
+        this.name = name;
+    }
+    
+    Person.prototype.showIntro = function () {
+        console.log(`Hello! My Name is ${this.name}`);
+    };
+    
+    function Employee(name, ID) {
+        Person.call(this, name); 
+        this.ID = ID;
+    }
+    
+    Employee.prototype = Object.create(Person.prototype);
+    Employee.prototype.constructor = Employee; 
+    
+    Employee.prototype.showIDWithName = function () {
+        console.log(`My Name is ${this.name} and my id is ${this.ID}`);
+    };
+    
+    function Developer(name, ID, techStack) {
+        Employee.call(this, name, ID); 
+        this.techStack = techStack;
+    }
+    
+    // Inherit from Employee
+    Developer.prototype = Object.create(Employee.prototype);
+    Developer.prototype.constructor = Developer; 
+    
+    Developer.prototype.showStackWithNameIDandStack = function () {
+        console.log(`My Name is ${this.name} and my id is ${this.ID}. My tech stacks are: ${this.techStack}`);
+    };
+    
+    let person = new Person('Hari');
+    let employee = new Employee('Suresh', 124);
+    let developer = new Developer('Jon', 3245, "JavaScript, HTML, CSS");
+    
+    person.showIntro(); //Hello! My Name is Hari
+    employee.showIntro(); //Hello! My Name is Suresh
+    employee.showIDWithName(); //My Name is Suresh and my id is 124
+    developer.showIntro(); //Hello! My Name is Jon
+    developer.showIDWithName(); //My Name is Jon and my id is 3245
+    developer.showStackWithNameIDandStack(); //My Name is Jon and my id is 3245. My tech stacks are: JavaScript, HTML, CSS
+    
+</code>
+        </pre>
+        <div class="box">
+            <button onclick="showAnsOne()">Run</button> See the result in console window
+        </div>
+    </div>
+    
+    <h2>Question 2</h2>
+    <p>Print each element of an array after 3 secs.</p>
+    <div class="box">
+<pre>
+<code>
+const numbers = [1, 2, 3, 4, 5];
+for (let i = 0; i < numbers.length; i++) {
+    setTimeout(() => {
+    console.log(numbers[i]);
+    }, i * 3000);
+}
+</code>
+</pre>
+
+    <button onclick="showAnsTwo()">Print</button> see the console window
+    </div>
+<div class="box">
+    <h2>Question 3</h2>
+    <p>In JavaScript, both call() and apply() methods are used to setting the context of 'this' within a function. Below are differences between both: </p>
+        <ul>
+            <li>call() invokes the function immediately, while bind() does not invokes the function immediately instead it returns a new function, that needs to be invoked separately.</li>
+            <li>in call() method, Arguments can passed directly after this context, while in bind() we can pass it when calling the new function as well</li>
+            <li>We use call() method where we need to call a function immediately with a specific 'this', while we use bind() when we want to create a reusable function with a fixed 'this' context.</li>
+        </ul>
+        <h3>Example :call()</h3>
+<pre>
+<code>
+function welcome(meet,msg) {
+    console.log(`${meet}, ${this.name}! ${msg}`);
+}
+
+const person = { name: "Amit" };
+
+welcome.call(person, "Hello", "Welcome"); 
+
+//output: Hello, Amit! Welcome   
+</code>
+</pre>
+<h3>Example :bind()</h3>
+<pre>
+<code>
+function welcome(meet,msg) {
+    console.log(`${meet}, ${this.name}! ${msg}`);
+}
+
+const person = { name: "Amit" };
+
+const bindWelcome = welcome.bind(person, "Hello")
+
+bindWelcome("Welcome"); 
+
+//output: Hello, Amit! Welcome 
+</code>
+</pre>
+</div>
+<div class="box">
+    <h2>Question 4</h2>
+    <p>The arguments object is an array-like (does not support all array's methods) object available inside all non-arrow functions. It has values of the arguments passed to that function.<br>
+    Below are three properties of arguments object:</p>
+    <ol>
+        <li><strong>arguments.length</strong>: it gives the number of arguments that were passed to the function.</li>
+        <li><strong>arguments.callee</strong>: this refers to the currently executing function. This is forbidden in strict mode.</li>
+        <li><strong>arguments[index]</strong>: just like an Array, each argument can be accessed using its index value.</li>
+    </ol>
+</div>
+<div class="box">
+    <h2>Question 5</h2>
+<pre>
+<code>
+    function GetCountFunction(fn) {
+        let invocationCount = 0, instanceCount = 0;
+      
+        const counterFunction = function(...args) {
+          invocationCount++;
+          fn.apply(this, args);
+        };
+      
+        counterFunction.getInvocationCount = () => invocationCount;
+        counterFunction.getInstanceCount = () => instanceCount;
+        counterFunction.instance = () => instanceCount++;
+      
+        return counterFunction;
+      }
+      
+      function testFunction() {
+        console.log("testFunction invoked!");
+      }
+      
+      const trackedFunction = GetCountFunction(testFunction);
+      
+      trackedFunction();
+      trackedFunction();
+      trackedFunction();
+      
+      trackedFunction.instance();  
+      trackedFunction.instance();  
+      
+      console.log("Number of invocations: ", trackedFunction.getInvocationCount()); // Number of invocations:  3
+      console.log("Number of instances: ", trackedFunction.getInstanceCount()); // Number of instances:  2
+      
+</code>
+</pre>
+</div>  
+<div class="box">
+    <h2>Question 6</h2>
+    <h4>Counter: <span id="value">0</span></h4>
+        <div class="buttons">
+            <button id="play">Play</button>
+            <button id="pause">Pause</button>
+            <button id="stop">Stop</button>
+        </div>
+</div>
+<div class="box">
+    <h2>Question 7</h2>
+    <p>Below are some array methods:</p>
+    <ol>
+        <li>
+            <strong>push()</strong> this adds element to end of the array.<br />
+            <em>syntax:</em> <code>arr.push(element1, ..., elementN)</code><br /><br />
+            <strong>Example:</strong>
+<pre>     <code>const arr = [1,2,3,4,5]
+
+     arr.push(6,7);
+     console.log(arr) // [1,2,3,4,5,6,7]
+</code>
+</pre>
+        </li>
+        <li>
+            <strong>pop()</strong> this removes element from end of the array.<br />
+            <em>syntax:</em> <code>arr.pop()</code><br /><br />
+            <strong>Example:</strong>
+<pre>     <code>const arr = [1,2,3,4,5]
+
+     arr.pop();
+     console.log(arr) // [1,2,3,4]
+</code>
+</pre>
+        </li>
+    </li>
+    <li>
+        <strong>shift()</strong> this removes element from start of the array.<br />
+        <em>syntax:</em> <code>arr.shift()</code><br /><br />
+        <strong>Example:</strong>
+<pre>     <code>const arr = [1,2,3,4,5]
+
+     arr.shift();
+     console.log(arr) // [2,3,4,5]
+</code>
+</pre>
+    </li>
+</li>
+</li>
+<li>
+    <strong>unshift()</strong> this adds element at start of the array.<br />
+    <em>syntax:</em> <code>arr.unshift(element1, ..., elementN)</code><br /><br />
+    <strong>Example:</strong>
+<pre>     <code>const arr = [1,2,3,4,5]
+
+     arr.unshift(-1,0);
+     console.log(arr) // [-1,0,1,2,3,4,5]
+</code>
+</pre>
+</li>
+<li>
+    <strong>includes()</strong> this checks if an array contains a certain element or not.<br />
+    <em>syntax:</em> <code>arr.includes(element)</code><br /><br />
+    <strong>Example:</strong>
+<pre>     <code>const arr = [1,2,3,4,5]
+
+     console.log(arr.includes(4)) //true
+     console.log(arr.includes(10)) //false
+</code>
+</pre>
+<p>
+    there are lots of array methods are available like: map(),filter(),reduce(),forEach(),find(),sort(),slice(),splice(),concat() etc
+</p>
+</li>
+    </ol>
+
+</div>
+<script src="./script.js" type="text/javascript"></script>
+</body>
+</html>
