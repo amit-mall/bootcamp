@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 Day 2</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+    <!-- Question one-->
+<div class="box">
+<h2>Question 1</h2>
+<h3>Define an interface User</h3>
+<pre>
+<code>
+    interface User {
+        id: number;
+        name: string;
+        email: string;
+        age?: number;
+    }
+</code>
+</pre>
+</div>
+<div class="box">
+<h2>Question 2</h2>
+<h3>Create a class UserManager</h3>
+<pre>
+<code>
+    class UserManager {
+        private users: User[] = [];
+    
+        addUser(user: User): void {
+            this.users.push(user);
+        }
+    
+        removeUser(id: number): void {
+            this.users = this.users.filter(user => user.id !== id);
+        }
+    
+        getUser(id: number): User | undefined {
+            return this.users.find(user => user.id === id);
+        }
+    
+        getAllUsers(): User[] {
+            return this.users;
+        }
+    }
+</code>
+</pre>
+</div>
+<div class="box">
+<h2>Question 3</h2>
+<h3>Use Arrow Functions & Default Parameters</h3>
+<pre>
+<code>
+    const getUser = (name: string = "Guest"):string=>{
+        return `Welcome ${name}`
+    }
+
+    console.log(getUser());
+</code>
+</pre>
+</div>
+<div class="box">
+<h2>Question 4</h2>
+<h3>Use Destructuring & Spread Operator</h3>
+<pre>
+<code>
+    function printUserDetails(user: User & Record<string, any>): void {
+        const {name,id,email,age,...extraInfo} = user;
+        let showExtraInfo = Object.keys(extraInfo).length ? extraInfo : {};
+        console.log(`Name: ${name}, Id: ${id}, Email: ${email}, Age: ${age}, Address: ${JSON.stringify(showExtraInfo)}`)
+     }
+    
+     printUserDetails({...obj1, address:"Noida"})
+</code>
+</pre>
+</div>
+<script src="./script.js" type="module"></script>
+</body>
+</html>

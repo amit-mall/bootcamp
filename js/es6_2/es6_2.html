@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 Day 2</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+    <!-- Question one-->
+    <div class="box">
+<h2>Question 1</h2>
+<h3>Filter unique array members using Set</h3>
+<pre>
+<code>
+const cities = ["Delhi","Mumbai","Pune","Delhi","Gurgaon","Noida","Mumbai"];
+</code>
+</pre>
+<button id="filterArray">Unique Array</button> <span id="filter"></span>
+    </div>
+
+    <!-- Question two-->
+<div class="box">
+    <h2>Question 2</h2>
+    <h3>Filter anagrams using Map</h3>
+    <pre>
+    <code>
+const listOfWords = ["Night", "State", "Fried", "Taste", "Peals", "Thing", "Fired", "Lapse","Ratle", "Slape", "Amit", "Test"];
+    </code>
+    </pre>
+    <button id="showfilterAnagrams">Filter Anagrams from Above Array</button> 
+    <p>&nbsp;</p>
+    <p id="anagrams"></p>
+    </div>
+<div class="box">
+<h2>Question 3</h2>
+<button id="runClass">Run the below code</button> Note: see the console window
+<pre>
+<code>
+    class Vehicle {
+        #chassisNumber = "abcd1234";
+        company = "Yamaha";
+        static info = "Vehicle is a machine used to transportation"
+        constructor(model){
+            this.model = model
+        }
+        static showVehicle(){
+            console.log(this.info)
+        }
+        showChassisNumber(){
+            console.log(`Vehicle chassis no. is ${this.#chassisNumber}`);
+        }
+    }
+    class Bike  extends Vehicle{
+        constructor(model,price){
+            super(model);
+            this.price = price;
+        }
+        showBike(){ 
+            console.log(`Your Bike model is ${this.model} and it's price is Rs. ${this.price}`)
+        }
+    }
+    class eBike extends Bike{
+        constructor(model, price, range){
+            super(model,price);
+            this.range = range;
+        }
+        showEbike(){
+            console.log(`Your eBike model is ${this.model} and it's price is Rs. ${this.price} and range is ${this.range} KM`)
+        }
+    }
+    
+    const vehicle = new Vehicle();
+    Vehicle.showVehicle(); // "Vehicle is a machine used to transportation"
+    vehicle.showChassisNumber(); // "Vehicle chassis no. is abcd1234"
+    const bike = new Bike("YZ", 120000);
+    const ebike = new eBike("R15", 150000,"200");
+    ebike.showEbike(); // "Your eBike model is R15 and it's price is Rs. 150000 and range is 200 KM"
+    console.log(ebike.company) // "Yamaha"
+</code>
+</pre>
+</div>
+<div class="box operation">
+<h2>Question 4</h2>
+<h3>Write a program to implement a class having static functions</h3>
+<div id="inputs">
+    <p>
+        <label>Number 1 :</label> <input type="number" id="number1" /> <span class="error"></span>
+    </p>
+    <p>
+        <label>Number 2 :</label> <input type="number" id="number2" /> <span class="error"></span>
+    </p>
+</div>
+<div id="addResult">
+    <button data-operation="add">Add</button><span></span>
+</div>
+<div id="subtractResult">
+    <button  data-operation="subtract">Subtract</button><span></span>
+</div>
+<div id="multiplyResult">
+    <button data-operation="multiply">Multiply</button><span></span>
+</div>
+<div id="divisionResult">
+    <button  data-operation="division">Division</button><span></span>
+</div>
+</div>
+<div class="box">
+    <h2>Question 5</h2>
+    <h3>Import a module containing the constants and method for calculating area of circle, rectangle, cylinder.</h3>
+    <button id="seeImpportResult">See the import result into console</button>
+</div>
+<div class="box">
+    <h2>Question 6</h2>
+    <h3>Import a module for filtering unique elements in an array.</h3>
+<pre>
+<code>
+const arr = [1,2,3,2,4,1,5,6,2,1,2];
+</code>
+</pre>
+<button id="seeImportMethod">See the action in console window</button>
+</div>
+
+<div class="box">
+    <h2>Question 7</h2>
+    <h3>Write a program to flatten a nested array to single level using arrow functions.</h3>
+<pre>
+<code>
+    const nestedArray = [1, [2, [3, 4], 5], [6, 7], 8];
+</code>
+</pre>
+<button id="seeFlatMethod">See the action in console window</button>
+</div>
+<script src="./script.js" type="module"></script>
+</body>
+</html>
