@@ -119,15 +119,13 @@ function calculate(operation) {
         case "division":
             result = Numbers.division(number1, number2);
             break;
-        default:
-            result = "Invalid operation";
     }
     if (!number1) {
-        inputs[0].nextElementSibling.innerHTML = "Enter the value";
+        inputs[0].nextElementSibling.innerHTML = "Enter valid  input";
         hasError = true;
     }
     if (!number2) {
-        inputs[1].nextElementSibling.innerHTML = "Enter the value";
+        inputs[1].nextElementSibling.innerHTML = "Enter valid input";
         hasError = true;
     }
     if(!hasError){
