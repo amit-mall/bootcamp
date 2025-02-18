@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React js Day one</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="box">
+    <h2>Question 1</h2>
+    <h3>Create a simple React app that displays "Hello, World!" on the screen.
+    </h3>
+    <p>We can create a component and then import that component inside main app</p>
+<pre>
+<code>
+    import React from "react";
+    export default function HelloWorld(){
+        return(
+            <h1>Hello World</h1>
+        )
+    }
+</code>
+</pre>
+</div>
+<div class="box">
+    <h2>Question 2</h2>
+    <h3>How to set up a React project and render a simple component.</h3>
+    <p>We can follow below steps:</p>
+    <ol>
+        <li>React works on node platform so fisrt we have to install node on machine, this will gives us npm (node package manager)</li>
+        <li>Then we can create our application using command : "npx create-react-app hello-word"</li>
+        <li>Now we can run the app, while inside root of the project folder, run "npm start"</li>
+        <li>Now we can create a component inside this app:</li>
+        <ul>
+            <li>create a file named Hello.js</li>
+            <li> Write a function to return what you want
+                <pre>
+                    <code>
+                        import React from "react";
+                        export default function HelloWorld(){
+                            return(
+                                <h1>Hello World</h1>
+                            )
+                        }
+                    </code>
+                </pre>
+            </li>
+            <li>We can also keep this file inside "components" folder</li>
+            <li>Now our component is ready for render, we can import and call this inside our App component:</li>
+<pre>
+<code>
+import HelloWorld from './components/hello.js';
+function App() {
+  return (
+    <div className="App">&lt;HelloWorld /&gt;</div>
+  );
+}
+
+export default App;
+
+                    </code>
+                </pre>
+          
+
+        </ul>
+    </ol>
+</div>
+<div class="box">
+    <h2>Question 3</h2>
+   <h3>functional component</h3>
+    See inside simple-app->src->components->functionalComponent.js
+
+    <h3>class component</h3>
+    See inside simple-app->src->components->classComponent.js
+</div>
+<div class="box">
+    <h2>Question 4</h2>
+    <h3>Given the following code, identify the issue and fix it:<br>
+       <pre><code>const element = &lt;h1&gt;Hello, World!;&lt;/h1&gt;;</code></pre> </h3>
+        <p>
+            above variable "element" is  storing value in JSX, so  ; should not be there (inside h1)
+        </p>
+</div>
+</body>
+</html>
