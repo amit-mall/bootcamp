@@ -1,0 +1,35 @@
+.input{
+    width: 400px;
+}
+ul{
+    list-style: none;
+    padding: 0;
+    max-width: 550px;
+    li{
+        position: relative;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        background: #d6e28e;
+        padding: 5px 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        span{
+            display: block;
+            flex: 1;
+            margin-right: 10px;
+        }
+        button{
+            margin: 0;
+            margin-left: auto;
+        }
+    }
+}
+.error{
+    color: red;
+    font-size: 12px;
+}
+button.red{
+    background: red;
+    min-width: 0;
+}
