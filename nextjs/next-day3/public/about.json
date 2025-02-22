@@ -1,0 +1,49 @@
+{
+    "about_us": {
+                "title": "About Us",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                },
+    "employees": [
+      {
+        "id": 1,
+        "name": "Employee 1",
+        "position": "Software Engineer",
+        "department": "Development",
+        "email": "emp1example.com",
+        "phone": "123-000-000"
+      },
+      {
+        "id": 2,
+        "name": "Employee 2",
+        "position": "Project Manager",
+        "department": "Management",
+        "email": "emp2example.com",
+        "phone": "456-000-000"
+      },
+      {
+        "id": 3,
+        "name": "Employee 3",
+        "position": "UI/UX Designer",
+        "department": "Design",
+        "email": "emp3example.com",
+        "phone": "789-000-000"
+      },
+      {
+        "id": 4,
+        "name": "Employee 4",
+        "position": "Data Analyst",
+        "department": "Analytics",
+        "email": "emp4example.com",
+        "phone": "012-000-000"
+      },
+      {
+        "id": 5,
+        "name": "Employee 5",
+        "position": "Lead",
+        "department": "Frontend",
+        "email": "emp5example.com",
+        "phone": "345-000-000"
+      }
+    ]
+  }
+  

@@ -1,0 +1,40 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "name": "Product one",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "price": 29.99,
+        "category": "category-one"
+      },
+      {
+        "id": 2,
+        "name": "Product two",
+        "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem.",
+        "price": 49.99,
+        "category": "category-two"
+      },
+      {
+        "id": 3,
+        "name": "Product three",
+        "description": "At vero eos et accusamus et iusto odio dignissimos ducimus.",
+        "price": 19.99,
+        "category": "category-three"
+      },
+      {
+        "id": 4,
+        "name": "Product four",
+        "description": "Temporibus autem quibusdam et aut officiis debitis necessitatibus.",
+        "price": 39.99,
+        "category": "category-four"
+      },
+      {
+        "id": 5,
+        "name": "Product five",
+        "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet.",
+        "price": 59.99,
+        "category": "category-five"
+      }
+    ]
+  }
+  
