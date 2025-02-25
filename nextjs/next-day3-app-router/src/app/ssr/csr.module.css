@@ -1,0 +1,8 @@
+.box{
+    --bg-color: #fff;
+    background: var(--bg-color);
+    padding: 10px;
+    overflow: hidden;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
