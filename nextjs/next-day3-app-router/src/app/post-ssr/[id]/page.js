@@ -12,16 +12,14 @@ async function getPost(id) {
   }
   
   export default async function PostDetail({ params }) {
-    const post = await getPost(params.id);
-  
-    if (!post) {
+    const post = await getPost(params?.id);
+    if (!params?.id) {
       return (
         <main className="p-6">
-          <h1 className="text-2xl font-bold mb-4">Post not found</h1>
+          <h1 className="text-2xl font-bold mb-4">Invalid post ID</h1>
         </main>
       );
     }
-  
     return (
       <main className="p-6">
         <h1 className="text-2xl font-bold mb-4">{post.title}</h1>
